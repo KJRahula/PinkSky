@@ -1,4 +1,4 @@
-# PinkSky (Eesti keeles)
+# PinkSky
 Selle projekti eesmärk on luua veebileht, mis aitab kasutajal arvutit kokku panna.
 Info on saadaval nii eesti kui ka inglise keeles ning parima tehnika leidmiseks kuvatakse kohalikke hindu.
 
@@ -8,7 +8,7 @@ Info on saadaval nii eesti kui ka inglise keeles ning parima tehnika leidmiseks 
 
 ---
 
-# PinkSky (English)
+# PinkSky
 The goal of this project is to create a website that helps users build their own PCs.
 The information is available in both Estonian and English, and local prices are displayed to help find the best hardware deals.
 
