@@ -7,6 +7,8 @@ import xml.etree.ElementTree as ET
 #Veebist andmete allalaadimiseks
 #pip install requests
 import requests
+#Tegeleb puukujutamisega
+from bs4 import BeautifulSoup
 
 #Veebipäring
 url = "https://cms.arvutitark.ee/sitemap/EST/product-catalog1.xml.gz"
@@ -26,5 +28,14 @@ ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 #Kirjutab listi kõik leitud lingid mis ta sai kätta xml failist.
 product_urls = [loc.text for loc in root.findall(".//sm:loc", ns)]
 
-print(f"Leiti {len(product_urls)} tootelinki.")
-print("Esimene link:", product_urls[0] if product_urls else "Tühi")
+#Proovime esimeselt lehelt infot saada
+sample_url = product_urls[0]
+print(f"Testime toodet: {sample_url}")
+
+#Puukujuline kujutamine
+page_res = requests.get(sample_url, headers=headers)
+soup = BeautifulSoup(page_res.text, "html.parser")
+
+#Üritame leida kindlaid detaile. 
+hind = soup.find("span", class_="_main-price")
+print(f"Hind : {hind}")
